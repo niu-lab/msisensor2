@@ -31,7 +31,7 @@ Faster!
 
 By testing 117 samples from EGA with different types of sequencing data, in average, the tumor only module is 10 times faster than the paired module of MSIsensor. A typical WES data can be finished within 180 seconds.
 
-![](https://github.com/ding-lab/msisensor/blob/master/test/fig6.timeplot.png)
+![](https://github.com/niu-lab/msisensor2/blob/master/test/fig6.timeplot.png)
 
 Install
 -------
