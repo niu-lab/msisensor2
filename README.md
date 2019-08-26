@@ -38,7 +38,7 @@ Install
 
 Currently, MSIsensor2 is based on Linux system, and we provide binaries only. Please note your GCC version should be at least 4.8.x.
 
-        git clone https://github.com/niu-lab/msisensor.git
+        git clone https://github.com/niu-lab/msisensor2.git
         cd msisensor2
         chmod +x msisensor2
 
