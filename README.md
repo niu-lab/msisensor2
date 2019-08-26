@@ -17,21 +17,21 @@ Tumor Only vs Paired
 
 Correlation coefficient between the two modules is 0.94, that levels of the msi score of different samples perform similarly under the two modules.High R-square shows that even though the two modules use different algorithms, their results are highly consistent, which fully demonstrates that the result of our tumor only module is reliable.
 
-![](https://github.com/ding-lab/msisensor/blob/master/test/tumor_only_vs_pair.jpg)
+![](https://github.com/niu-lab/msisensor2/blob/master/test/fig5.cor.png)
 
 MSIsensor2 vs TSO500
 -------
 
 To further illustrate the accuracy of tumor only module in MSIsensor2, we deliberately customized a model for the TSO500-panel and tested it with 10 samples. The results are shown in the table on the right-hand side. It is not difficult to see that the model we customized for the TSO500 is consistent with its own ability to discriminate the microsatellite status of the sample. In addition, MSIsensor2 is not critical to sequencing methods or sequencing types, which refers that MSIsensor2 can handle both target gene sequencing data and amplification sequencing data, furthermore, it is applicable for WES, WGS, panel and ctDNA data.
 
-![](https://github.com/ding-lab/msisensor/blob/master/test/tumor_only_vs_pair.jpg)
+![](https://github.com/niu-lab/msisensor2/blob/master/test/table.png)
 
 Faster!
 -------
 
 By testing 117 samples from EGA with different types of sequencing data, in average, the tumor only module is 10 times faster than the paired module of MSIsensor. A typical WES data can be finished within 180 seconds.
 
-![](https://github.com/ding-lab/msisensor/blob/master/test/tumor_only_vs_pair.jpg)
+![](https://github.com/ding-lab/msisensor/blob/master/test/fig6.timeplot.png)
 
 Install
 -------
