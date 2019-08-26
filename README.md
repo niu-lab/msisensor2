@@ -7,9 +7,9 @@ Result
 
 Given tumor only sequencing data, MSIsensor2 uses machine learning models to figure out the MSI status for a distribution per microsatellite. Finally, the msi score (number of msi sites / all valid sites) can be calculated. In our test of 117 EGA samples, results from tumor only module are comparable with paired tumor and normal sequencing data input (see two result figures below) . The recommended msi score cutoff value is 20% (msi high: msi score >= 20%). We also tested TCGA and EGA data whose results showed the accuracy of tumor only module is up to 99% and illustrated the comparable performance advantage of tumor only module over original MSIsensor tumor/normal paired module (see ROC figures below) . In addition, for the tumor only module, we also tested ctDNA sequencing data from different companies. The results showed that MSIsensor2 can accurately discriminate the microsatellite status of ctDNA sequencing samples.
 
-![](https://github.com/ding-lab/msisensor/blob/master/test/tumor_only_vs_pair.jpg)
-![](https://github.com/ding-lab/msisensor/blob/master/test/tumor_only_vs_pair.jpg)
-![](https://github.com/ding-lab/msisensor/blob/master/test/tumor_only_vs_pair.jpg)
+![](https://github.com/niu-lab/msisensor2/tree/master/test/fig2.pairresult.png)
+![](https://github.com/niu-lab/msisensor2/tree/master/test/fig3tumoronlyresultproduct.png)
+![](https://github.com/niu-lab/msisensor2/tree/master/test/fig4.rocplot.png)
 
 Tumor Only vs Paired
 -------
@@ -94,15 +94,8 @@ msisensor2 msi [options]:
 
 Example
 -------
-1. Scan microsatellites from reference genome:
 
-        msisensor2 scan -d reference.fa -o microsatellites.list
-
-2. MSI scoring:
-
-   for paired tumor and normal sequence data:
-
-        msisensor2 msi -d microsatellites.list -n normal.bam -t tumor.bam -e bed.file -o output.prefix
+1. MSI scoring:
 
    for tumor only sequence data:
 
