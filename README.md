@@ -102,7 +102,7 @@ MSI scoring:
 
         msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
 
-   Note: normal and tumor bam index files are needed in the same directory as bam files
+   Note: bam index files are needed in the same directory as bam files
 
 Output
 -------
