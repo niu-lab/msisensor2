@@ -96,22 +96,16 @@ msisensor2 msi [options]:
 Example
 -------
 
-1. MSI scoring:
+MSI scoring:
 
    for tumor only sequence data:
 
-        msisensor2 msi -M ./models_hg38 -t tumor.bam -o output.tumor.prefix
+        msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
 
    Note: normal and tumor bam index files are needed in the same directory as bam files
 
 Output
 -------
-The list of microsatellites is output in "scan" step. The MSI scoring step produces 4 files:
-
-        output.prefix
-        output.prefix_dis_tab
-        output.prefix_germline
-        output.prefix_somatic
 
 for tumor only input, the MSI scoreing step produces 3 files: 
 
@@ -119,54 +113,27 @@ for tumor only input, the MSI scoreing step produces 3 files:
         output.tumor.prefix_dis_tab
         output.tumor.prefix_somatic
 
-1. microsatellites.list: microsatellite list output ( columns with *_binary means: binary conversion of DNA bases based on A=00, C=01, G=10, and T=11 )
-
-        chromosome      location        repeat_unit_length     repeat_unit_binary    repeat_times    left_flank_binary     right_flank_binary      repeat_unit_bases      left_flank_bases       right_flank_bases
-        1       10485   4       149     3       150     685     GCCC    AGCCG   GGGTC
-        1       10629   2       9       3       258     409     GC      CAAAG   CGCGC
-        1       10652   2       2       3       665     614     AG      GGCGC   GCGCG
-        1       10658   2       9       3       546     409     GC      GAGAG   CGCGC
-        1       10681   2       2       3       665     614     AG      GGCGC   GCGCG
-
-2. output.prefix: msi score output
+1. output.prefix: msi score output
 
         Total_Number_of_Sites   Number_of_Somatic_Sites %
-        640     75      11.72
+        2     1      50.00
 
-3. output.prefix_dis_tab: read count distribution (N: normal; T: tumor)
+3. output.prefix_dis: read count distribution (N: normal; T: tumor)
 
-        1       16248728        ACCTC   11      T       AAAGG   N       0       0       0       0       1       38      0       0       0       0       0       0       0
-        1       16248728        ACCTC   11      T       AAAGG   T       0       0       0       0       17      22      1       0       0       0       0       0       0
+        chr22 29286892 AAAGC 12[T] CTCTT
+        T: 0 0 0 0 0 0 0 0 25 71 4 86 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
 4. output.prefix_somatic: somatic sites detected ( FDR: false discovery rate )
 
-        chromosome   location        left_flank     repeat_times    repeat_unit_bases    right_flank      difference      P_value    FDR     rank
-        1       16200729        TAAGA   10      T       CTTGT   0.55652 2.8973e-15      1.8542e-12      1
-        1       75614380        TTTAC   14      T       AAGGT   0.82764 5.1515e-15      1.6485e-12      2
-        1       70654981        CCAGG   21      A       GATGA   0.80556 1e-14   2.1333e-12      3
-        1       65138787        GTTTG   13      A       CAGCT   0.8653  1e-14   1.6e-12 4
-        1       35885046        TTCTC   11      T       CCCCT   0.84682 1e-14   1.28e-12        5
-        1       75172756        GTGGT   14      A       GAAAA   0.57471 1e-14   1.0667e-12      6
-        1       76257074        TGGAA   14      T       GAGTC   0.66023 1e-14   9.1429e-13      7
-        1       33087567        TAGAG   16      A       GGAAA   0.53141 1e-14   8e-13   8
-        1       41456808        CTAAC   14      T       CTTTT   0.76286 1e-14   7.1111e-13      9
+        chromosome   location        left_flank     repeat_times    repeat_unit_bases    right_flank    discrimination_value_ML
 
-5. output.prefix_germline: germline sites detected
-
-        chromosome   location        left_flank     repeat_times    repeat_unit_bases    right_flank      genotype
-        1       1192105 AATAC   11      A       TTAGC   5|5
-        1       1330899 CTGCC   5       AG      CACAG   5|5
-        1       1598690 AATAC   12      A       TTAGC   5|5
-        1       1605407 AAAAG   14      A       GAAAA   1|1
-        1       2118724 TTTTC   11      T       CTTTT   1|1
-
+        chr22	29286892	AAAGC	12	T	CTCTT	0.98852
 
 Test sample
 -------
-We provided one small dataset (tumor and matched normal bam files) to test the msi scoring step:
+We provided one small dataset (tumor only bam file) to test the msi scoring step:
 
-        cd ./test
-        bash run.sh
+        msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
 
 We also provided a R script to visualize MSI score distribution of MSIsensor2 output. ( msi score list only or msi score list accompanied with known msi status). For msi score list only as input: 
 
