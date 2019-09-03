@@ -105,7 +105,7 @@ MSI scoring:
         msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
 
    hg19 bam:
-`       
+   
         msisensor2 msi -M ./models_hg19 -t ./test/example.tumor.only.hg19.bam -o output.tumor.prefix
 
 
