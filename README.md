@@ -100,7 +100,14 @@ MSI scoring:
 
    for tumor only sequence data:
 
+   hg38 bam:
+
         msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
+
+   hg19 bam:
+`       
+        msisensor2 msi -M ./models_hg19 -t ./test/example.tumor.only.hg19.bam -o output.tumor.prefix
+
 
    Note: bam index files are needed in the same directory as bam files
 
@@ -134,6 +141,7 @@ Test sample
 We provided one small dataset (tumor only bam file) to test the msi scoring step:
 
         msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
+        msisensor2 msi -M ./models_hg19 -t ./test/example.tumor.only.hg19.bam -o output.tumor.prefix
 
 We also provided a R script to visualize MSI score distribution of MSIsensor2 output. ( msi score list only or msi score list accompanied with known msi status). For msi score list only as input: 
 
