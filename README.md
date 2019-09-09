@@ -1,6 +1,6 @@
 MSIsensor2
 ===========
-MSIsensor2 is a novel algorithm based machine learning, featuring a large upgrade in the microsatellite instability (MSI) detection for tumor only or Cell-Free Tumor DNA (ctDNA) sequencing data. The original MSIsensor is specially designed for tumor/normal paired sequencing data.
+MSIsensor2 is a novel algorithm based machine learning, featuring a large upgrade in the microsatellite instability (MSI) detection for tumor only sequencing data, including Cell-Free Tumor DNA (ctDNA), Formalin-Fixed Paraffin-Embedded(FFPE) and other sample types. The original MSIsensor is specially designed for tumor/normal paired sequencing data.
 
 Result
 -------
@@ -22,7 +22,7 @@ Correlation coefficient between the two modules is 0.94, that levels of the msi 
 MSIsensor2 vs TSO500
 -------
 
-To further illustrate the accuracy of tumor only module in MSIsensor2, we deliberately customized a model for the TSO500-panel and tested it with 10 samples. The results are shown in the table on the right-hand side. It is not difficult to see that the model we customized for the TSO500 is consistent with its own ability to discriminate the microsatellite status of the sample. In addition, MSIsensor2 is not critical to sequencing methods or sequencing types, which refers that MSIsensor2 can handle both target gene sequencing data and amplification sequencing data, furthermore, it is applicable for WES, WGS, panel and ctDNA data.
+To further illustrate the accuracy of tumor only module in MSIsensor2, we deliberately customized a model for the TSO500-panel and tested it with 10 samples. The results are shown in the table below. It is not difficult to see that the model we customized for the TSO500 is consistent with its own ability to discriminate the microsatellite status of the sample. In addition, MSIsensor2 is not critical to sequencing methods or sequencing types, which refers that MSIsensor2 can handle both target gene sequencing data and amplification sequencing data, furthermore, it is applicable for WES, WGS, panel and ctDNA data.
 
 ![](https://github.com/niu-lab/msisensor2/blob/master/test/table.png)
 
@@ -117,7 +117,7 @@ Output
 for tumor only input, the MSI scoreing step produces 3 files: 
 
         output.tumor.prefix
-        output.tumor.prefix_dis_tab
+        output.tumor.prefix_dis
         output.tumor.prefix_somatic
 
 1. output.prefix: msi score output
@@ -125,12 +125,12 @@ for tumor only input, the MSI scoreing step produces 3 files:
         Total_Number_of_Sites   Number_of_Somatic_Sites %
         2     1      50.00
 
-3. output.prefix_dis: read count distribution (N: normal; T: tumor)
+3. output.prefix_dis: read count distribution (T: tumor)
 
         chr22 29286892 AAAGC 12[T] CTCTT
         T: 0 0 0 0 0 0 0 0 25 71 4 86 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
-4. output.prefix_somatic: somatic sites detected ( FDR: false discovery rate )
+4. output.prefix_somatic: somatic sites detected
 
         chromosome   location        left_flank     repeat_times    repeat_unit_bases    right_flank    discrimination_value_ML
 
