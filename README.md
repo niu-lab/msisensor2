@@ -1,11 +1,11 @@
 MSIsensor2
 ===========
-MSIsensor2 is a novel algorithm based machine learning, featuring a large upgrade in the microsatellite instability (MSI) detection for tumor only sequencing data, including Cell-Free Tumor DNA (ctDNA), Formalin-Fixed Paraffin-Embedded(FFPE) and other sample types. The original MSIsensor is specially designed for tumor/normal paired sequencing data.
+MSIsensor2 is a novel algorithm based machine learning, featuring a large upgrade in the microsatellite instability (MSI) detection for tumor only sequencing data, including Cell-Free DNA (cfDNA), Formalin-Fixed Paraffin-Embedded(FFPE) and other sample types. The original MSIsensor is specially designed for tumor/normal paired sequencing data.
 
 Result
 -------
 
-Given tumor only sequencing data, MSIsensor2 uses machine learning models to figure out the MSI status for a distribution per microsatellite. Finally, the msi score (number of msi sites / all valid sites) can be calculated. In our test of 117 EGA samples, results from tumor only module are comparable with paired tumor and normal sequencing data input (see two result figures below) . The recommended msi score cutoff value is 20% (msi high: msi score >= 20%). We also tested TCGA and EGA data whose results showed the accuracy of tumor only module is up to 99% and illustrated the comparable performance advantage of tumor only module over original MSIsensor tumor/normal paired module (see ROC figures below) . In addition, for the tumor only module, we also tested ctDNA sequencing data from different companies. The results showed that MSIsensor2 can accurately discriminate the microsatellite status of ctDNA sequencing samples.
+Given tumor only sequencing data, MSIsensor2 uses machine learning models to figure out the MSI status for a distribution per microsatellite. Finally, the msi score (number of msi sites / all valid sites) can be calculated. In our test of 117 EGA samples, results from tumor only module are comparable with paired tumor and normal sequencing data input (see two result figures below) . The recommended msi score cutoff value is 20% (msi high: msi score >= 20%). We also tested TCGA and EGA data whose results showed the accuracy of tumor only module is up to 99% and illustrated the comparable performance advantage of tumor only module over original MSIsensor tumor/normal paired module (see ROC figures below) . In addition, for the tumor only module, we also tested cfDNA sequencing data from different companies. The results showed that MSIsensor2 can accurately discriminate the microsatellite status of cfDNA (>0.1% tumor content) sequencing samples.
 
 ![](https://github.com/niu-lab/msisensor2/blob/master/test/fig2.pairresult.png)
 ![](https://github.com/niu-lab/msisensor2/blob/master/test/fig3tumoronlyresultproduct.png)
@@ -22,7 +22,7 @@ Correlation coefficient between the two modules is 0.94, that levels of the msi 
 MSIsensor2 vs TSO500
 -------
 
-To further illustrate the accuracy of tumor only module in MSIsensor2, we deliberately customized a model for the TSO500-panel and tested it with 10 samples. The results are shown in the table below. It is not difficult to see that the model we customized for the TSO500 is consistent with its own ability to discriminate the microsatellite status of the sample. In addition, MSIsensor2 is not critical to sequencing methods or sequencing types, which refers that MSIsensor2 can handle both target gene sequencing data and amplification sequencing data, furthermore, it is applicable for WES, WGS, panel and ctDNA data.
+To further illustrate the accuracy of tumor only module in MSIsensor2, we deliberately customized a model for the TSO500-panel and tested it with 10 samples. The results are shown in the table below. It is not difficult to see that the model we customized for the TSO500 is consistent with its own ability to discriminate the microsatellite status of the sample. In addition, MSIsensor2 is not critical to sequencing methods or sequencing types, which refers that MSIsensor2 can handle both target gene sequencing data and amplification sequencing data, furthermore, it is applicable for WES, WGS, panel and cfDNA data.
 
 ![](https://github.com/niu-lab/msisensor2/blob/master/test/table.png)
 
