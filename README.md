@@ -76,10 +76,13 @@ MSI scoring:
 
         msisensor2 msi -M ./models_hg38 -t ./test/example.tumor.only.hg38.bam -o output.tumor.prefix
 
-   hg19 bam:
+   hg19 or GRCh37 bam:
    
-        msisensor2 msi -M ./models_hg19 -t ./test/example.tumor.only.hg19.bam -o output.tumor.prefix
+        msisensor2 msi -M ./models_hg19_GRCh37 -t ./test/example.tumor.only.hg19.bam -o output.tumor.prefix
 
+   b37 or humanG1Kv37 bam:
+   
+        msisensor2 msi -M ./models_b37_humanG1Kv37 -t ./test/example.tumor.only.b37.bam -o output.tumor.prefix
 
    Note: bam index files are needed in the same directory as bam files
 
