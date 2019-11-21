@@ -82,7 +82,7 @@ MSI scoring:
 
    b37 or humanG1Kv37 bam:
    
-        msisensor2 msi -M ./models_b37_humanG1Kv37 -t ./test/example.tumor.only.b37.bam -o output.tumor.prefix
+        msisensor2 msi -M ./models_b37_HumanG1Kv37 -t ./test/example.tumor.only.b37.bam -o output.tumor.prefix
 
    Note: bam index files are needed in the same directory as bam files
 
