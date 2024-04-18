@@ -132,5 +132,4 @@ For msi score list accompanied with known msi status as input:
 Contact
 -------
 If you have any questions, please contact one or more of the following folks:
-Beifang Niu <bniu@sccas.cn>
-Xinyin Han <hanxinyin@cnic.cn>
+Beifang Niu <beifang.cn@gmail.com>
