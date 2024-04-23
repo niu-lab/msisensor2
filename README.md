@@ -1,7 +1,7 @@
 MSIsensor2
 ===========
 
-NOTE: Now we offer customized site model training services based on the BED file provided by the user.
+**NOTE:** Now we offer customized site model training services based on the BED file provided by the user.
 
 MSIsensor2 is a novel algorithm based machine learning, featuring a large upgrade in the microsatellite instability (MSI) detection for tumor only sequencing data, including Cell-Free DNA (cfDNA), Formalin-Fixed Paraffin-Embedded(FFPE) and other sample types. The original MSIsensor is specially designed for tumor/normal paired sequencing data.
 
